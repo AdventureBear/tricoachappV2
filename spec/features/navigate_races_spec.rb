@@ -1,8 +1,7 @@
 require 'spec_helper'
 
-describe "Viewing a single race" do 
-
-	it "Shows the races details" do
+describe "Navigating Races" do
+	it "allows navigation from the detail page to the listing page" do
 	
 	race = Race.create(name: "Pittsburgh Olympic",
                       description: "A beautiful location in downtown Pittsburgh, with HV lanes, runs and poopy swims and more. ",
@@ -11,20 +10,11 @@ describe "Viewing a single race" do
                       state: "IL",
                       race_date: "2014-05-02")
 
-
-	
 	visit race_url(race)
 
+	click_link "All Races"
 
-		 expect(page).to have_text(race.name)
-  		 expect(page).to have_text(race.description)
-  		 expect(page).to have_text(race.race_category)
-  		 expect(page).to have_text(race.city)
-  		 expect(page).to have_text(race.state)
-  		 expect(page).to have_text(race.race_date)
+	expect(current_path).to eq(races_path)
 
 	end
-
-
-
 end
