@@ -1,0 +1,7 @@
+<h1><%= pluralize(@races.size, 'Race') %></h1>
+
+<ul>
+<% @races.each do |race| %>
+  <li><%= race %></li>
+<% end %>
+</ul>
