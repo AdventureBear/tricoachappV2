@@ -4,7 +4,7 @@
 <% @races.each do |race| %>
   <article>
     <header>
-      <h2><%= race.name %></h2>
+      <h2><%= link_to race.name, race %></h2>
     </header>
     <p>
       <%= truncate(race.description, length: 40, separator: ' ') %>
