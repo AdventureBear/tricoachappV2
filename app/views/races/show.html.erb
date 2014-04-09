@@ -11,14 +11,33 @@
   <p>
     <%= @race.race_date %>
   </p>
-  <h3>City</h3>
+  <h3>City, State</h3>
   <p>
-    <%= @race.city %>
+    <%= @race.city %>, <%= @race.state %>
   </p>
-  <h3>State</h3>
-  <p>
-     <%= @race.state %>
-  </p>
+
+
+    <h3>Swim Distance </h3>
+    <p>
+      <%= @race.swim_distance %>  <%= @race.swim_units%>
+    </p>
+
+    <h3>Bike Distance </h3>
+    <p>
+      <%= @race.bike_distance %> <%= @race.bike_units %>
+    </p>
+
+    <h3>Run Distance </h3>
+    <p>
+      <%= @race.run_distance %> <%= @race.run_units %>
+    </p>
+
+
+
+
 </article>
 
+<nav>
 <%= link_to "All Races", races_path %>
+<%= link_to "Edit", edit_race_path(@race) %>
+</nav>
