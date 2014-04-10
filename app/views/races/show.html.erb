@@ -1,12 +1,31 @@
 
-<article>
+<article class="race" >
   <header>
     <h1><%= @race.name %></h1>
   </header>
-  <h2>Description</h2>
+  <!--<h2>Description</h2>-->
   <p>
     <%= @race.description %>
   </p>
+
+
+  <table>
+      <tr>
+        <th>Category:</th>
+        <td><%= @race.race_category %></td>
+      </tr>
+      <tr>
+      <tr>
+        <th>Race Date:</th>
+        <td><%= @race.race_date %></td>
+      </tr>
+      <tr>
+        <th>Location</th>
+        <td><%= @race.city %>, <%= @race.state %></td>
+      </tr>
+    </table>
+<p></p>
+    <!--
   <h3>Date</h3>
   <p>
     <%= @race.race_date %>
@@ -15,29 +34,35 @@
   <p>
     <%= @race.city %>, <%= @race.state %>
   </p>
+-->
+  <table>
+    <tr>
 
-
-    <h3>Swim Distance </h3>
-    <p>
-      <%= @race.swim_distance %>  <%= @race.swim_units%>
-    </p>
-
-    <h3>Bike Distance </h3>
-    <p>
-      <%= @race.bike_distance %> <%= @race.bike_units %>
-    </p>
-
-    <h3>Run Distance </h3>
-    <p>
-      <%= @race.run_distance %> <%= @race.run_units %>
-    </p>
-
-
-
+      <th>Swim Distance </th>
+      <td>
+        <%= @race.swim_distance %>  <%= @race.swim_units%>
+      </td>
+    </tr>
+    <tr>
+      <th>Bike Distance </th>
+      <td>
+        <%= @race.bike_distance %> <%= @race.bike_units %>
+      </td>
+    </tr>
+    <tr>
+      <th>Run Distance </th>
+      <td>
+        <%= @race.run_distance %> <%= @race.run_units %>
+      </td>
+    </tr>
+  </table>
 
 </article>
 
 <nav>
-<%= link_to "All Races", races_path %>
-<%= link_to "Edit", edit_race_path(@race) %>
+<%#= link_to "All Races", races_path %> 
+<%= link_to "Edit", edit_race_path(@race), class: 'button' %> 
+<%= link_to "Delete", race_path(@race), 
+      class: 'button', 
+      method: :delete, data: { confirm: 'Are you sure?' }%>
 </nav>

@@ -15,9 +15,13 @@ class RacesController < ApplicationController
 
 	def update
 		@race = Race.find(params[:id])
-		params.require(:race).permit!
- 	 	@race.update(params[:race])
- 	 	redirect_to @race
+		
+ 	 	if @race.update(race_params)
+
+	 	 	redirect_to @race, notice: "Race successfully updated!"
+	 	else
+	 	 	render :edit
+	 	end
  	end
 
  	def new
@@ -27,10 +31,27 @@ class RacesController < ApplicationController
 
  
 	def create
-	 	params.require(:race).permit!	 
-	  	@race = Race.new(params[:race])
-	  	@race.save
-	  	redirect_to @race
+	 	
+	  	@race = Race.new(race_params)
+	  	if
+	  		@race.save
+	  		redirect_to @race, notice: "Race successfully created!"
+	  	else
+	  		render :new	
+	  	end
 	end
 
+	def destroy
+		@race = Race.find(params[:id])
+		  @race.destroy
+		  redirect_to races_url, alert: "Race successfully deleted!"
+	end
+
+
+private
+
+	def race_params
+		race_params = params.require(:race).
+	  			permit!
+	end
 end

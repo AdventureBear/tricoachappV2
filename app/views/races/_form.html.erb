@@ -1,0 +1,81 @@
+<%= form_for(@race) do |f| %>
+ <%#= @race.errors.full_messages.to_sentence %>
+<%= render "shared/errors", object: @race %>
+  <fieldset>
+    <ol>
+  <li>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </li>
+  <li>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description, cols: 40, rows: 7 %>
+  </li>
+  <li>
+    <%= f.label :race_category %><br/>
+    <%= f.text_field :race_category %>
+  </li>
+  <li>
+    <%= f.label :race_date %><br/>
+    <%= f.date_select :race_date %>
+  </li>
+  <li>
+    <%= f.label :city %><br/>
+    <%= f.text_field :city %>
+  </li>
+  <li>
+    <%= f.label :state %><br/>
+    <%= f.text_field :state %>
+  </li>
+<li>
+</li>
+  <li>
+    <%= f.label :swim_distance %><br/>
+    <%= f.number_field  :swim_distance %>
+  </li>
+<li>
+	<%= f.label :swim_units %><br/>
+	<%= f.radio_button :swim_units, "Km" %>
+	<%= f.label :swim_units, "Km" %>
+	<%= f.radio_button :swim_units, "Miles" %>
+	<%= f.label :swim_units, "Miles" %>
+</li>
+<li>
+</li>
+  <li>
+    <%= f.label :bike_distance %><br/>
+    <%= f.number_field :bike_distance %>
+  </li>
+<li>
+	<%= f.label :bike_units %><br/>
+	<%= f.radio_button :bike_units, "Km" %>
+	<%= f.label :bike_units, "Km" %>
+	<%= f.radio_button :bike_units, "Miles" %>
+	<%= f.label :bike_units, "Miles" %>
+</li>
+<li>
+</li>
+  <li>
+    <%= f.label :run_distance %><br/>
+    <%= f.number_field  :run_distance %>
+  </li>
+<li>
+</li>
+<li>
+	<%= f.label :run_units %><br/>
+	<%= f.radio_button :run_units, "Km" %>
+	<%= f.label :run_units, "Km" %>
+	<%= f.radio_button :run_units, "Miles" %>
+	<%= f.label :run_units, "Miles" %>
+</li>
+</ol>
+
+
+	
+
+  <p>
+    <%= f.submit %> | 
+    <%= link_to "Cancel", races_path, class: 'button' %>
+  </p>
+</fieldset>
+<% end %>

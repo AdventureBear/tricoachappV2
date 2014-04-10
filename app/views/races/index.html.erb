@@ -1,14 +1,16 @@
 <h1><%= pluralize(@races.size, 'Race') %></h1>
 
-
+<ul id = "races">
 <% @races.each do |race| %>
-  <article>
+<li>
+  <article class="race" id="<%= dom_id(race) %>">
     <header>
       <h2><%= link_to race.name, race %></h2>
     </header>
     <p>
       <%= truncate(race.description, length: 40, separator: ' ') %>
     </p>
+
     <table>
     	<tr>
         <th>Category:</th>
@@ -16,21 +18,15 @@
       </tr>
       <tr>
       <tr>
-        <th>Released:</th>
+        <th>Race Date:</th>
         <td><%= race.race_date %></td>
       </tr>
       <tr>
-        <th>Rating:</th>
-        <td><%= race.city %></td>
-      </tr>
-      <tr>
-        <th>Total Gross:</th>
-        <td><%= race.state %></td>
+        <th>Location</th>
+        <td><%= race.city %>, <%= race.state %></td>
       </tr>
     </table>
   </article>
+</li>
 <% end %>
-
-<nav>
-<%= link_to("Add New Race", new_race_path) %>
-</nav>
+</ul>

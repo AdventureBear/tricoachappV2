@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TricoachappV2</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Triathlon Coach's Helper</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<%= render "layouts/header" %>
+
+<div id="wrapper">
+<%= render "layouts/flashes" %>
+
+	<div id="container">
+		<%= render "layouts/sidebar" %>	
+		<section id="content">
+
+			<%= yield %>
+		</section>
+	</div>
+</div>
+
+<%= render 'layouts/footer' %>
 
 </body>
 </html>

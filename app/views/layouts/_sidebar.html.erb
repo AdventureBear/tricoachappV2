@@ -1,0 +1,14 @@
+<aside id="sidebar" >
+		<nav>
+			<ul>
+				<li class="all-races">
+					<%= link_to 'All Races', races_path, class: 'button' %>
+				</li>
+				<!--<#% if current_user_admin? %>-->
+				<li class="create-race">
+					<%= link_to 'Add New Race', new_race_path, class: 'button' %>
+				</li>	
+				<!--<#% end %>-->
+			</ul>
+		</nav>
+	</aside>	
