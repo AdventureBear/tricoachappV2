@@ -1,0 +1,76 @@
+<h1>Create Race</h1>
+
+<%= form_for(@race) do |f| %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description, cols: 40, rows: 7 %>
+  </p>
+  <p>
+    <%= f.label :race_category %><br/>
+    <%= f.text_field :race_category %>
+  </p>
+  <p>
+    <%= f.label :race_date %><br/>
+    <%= f.date_select :race_date %>
+  </p>
+  <p>
+    <%= f.label :city %><br/>
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br/>
+    <%= f.text_field :state %>
+  </p>
+<p>
+</p>
+  <p>
+    <%= f.label :swim_distance %><br/>
+    <%= f.number_field  :swim_distance %>
+  </p>
+<p>
+	<%= f.label :swim_units %><br/>
+	<%= f.radio_button :swim_units, "Km" %>
+	<%= f.label :swim_units, "Km" %>
+	<%= f.radio_button :swim_units, "Miles" %>
+	<%= f.label :swim_units, "Miles" %>
+</p>
+<p>
+</p>
+  <p>
+    <%= f.label :bike_distance %><br/>
+    <%= f.number_field :bike_distance %>
+  </p>
+<p>
+	<%= f.label :bike_units %><br/>
+	<%= f.radio_button :bike_units, "Km" %>
+	<%= f.label :bike_units, "Km" %>
+	<%= f.radio_button :bike_units, "Miles" %>
+	<%= f.label :bike_units, "Miles" %>
+</p>
+<p>
+</p>
+  <p>
+    <%= f.label :run_distance %><br/>
+    <%= f.number_field  :run_distance %>
+  </p>
+<p>
+</p>
+<p>
+	<%= f.label :run_units %><br/>
+	<%= f.radio_button :run_units, "Km" %>
+	<%= f.label :run_units, "Km" %>
+	<%= f.radio_button :run_units, "Miles" %>
+	<%= f.label :run_units, "Miles" %>
+</p>
+
+
+	
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

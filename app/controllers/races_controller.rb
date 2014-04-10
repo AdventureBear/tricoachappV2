@@ -18,7 +18,19 @@ class RacesController < ApplicationController
 		params.require(:race).permit!
  	 	@race.update(params[:race])
  	 	redirect_to @race
+ 	end
 
- 	 	
+ 	def new
+ 		@race = Race.new
+ 	end
+
+
+ 
+	def create
+	 	params.require(:race).permit!	 
+	  	@race = Race.new(params[:race])
+	  	@race.save
+	  	redirect_to @race
 	end
+
 end
