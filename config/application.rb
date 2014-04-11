@@ -28,3 +28,9 @@ module TricoachappV2
     # config.i18n.default_locale = :de
   end
 end
+
+# SMA 4/10/14
+# Suppress "trash" files from generate command. 
+# Suppresses assets, helpers & specs that are infrequently used
+# These can be manually created if needed 
+#  http://railsguides.net/2013/07/02/do-not-generate-trash-with-rails/
