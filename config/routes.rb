@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
- root "races#index"
+ root "home#index"
 
   devise_for :users
   resources :races
+  resources :home
+  resources :dashboard
 
  
 
