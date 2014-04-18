@@ -1,0 +1,38 @@
+<article id = "user">
+
+  <header>
+    <p id="user-image"><%= image_for(@user) %></p>
+    <h1><%= @user.last_name %> <%= @user.first_name %></h1>
+      <h2><%= mail_to(@user.email) %></h2>
+  </header>
+
+
+
+  <h3>Birthdate:</h3>
+  <p>
+    <%= @user.birthdate %>
+  </p>
+
+  <h3>Age</h3>
+  <p>
+    <%= format_age(@user) %>
+  </p>
+
+<!--Implement this with contact info model?
+  <h3>Address </h3>
+  <p>
+    <#%= @user.address_one %><br />
+    <#%= @user.address_two %><br />
+    <#%= @user.city %>, 
+    <#%= @user.state %><br/>
+    <#%= @user.zip %>
+  </p>-->
+</article>
+
+<footer>
+  <nav>
+    <%= link_to "Edit User", edit_user_path, class: 'button' %> |
+    <%= link_to "New User", new_user_path, class: 'button' %> | 
+    <%= link_to "All Users", users_path, class: 'button' %>
+  </nav>
+</footer>

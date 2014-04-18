@@ -7,10 +7,10 @@
 				  Logged in as <strong><%= current_user.email %></strong> |
 				  <%= link_to 'Home',    dashboard_index_path %> |
 				  <%= link_to 'Edit profile', edit_user_registration_path %> |
-				  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'button' %>
+				  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'button' %>
 			<% else %>
 				  <%= link_to "Sign up", new_user_registration_path, class: 'button' %> |
-				  <%= link_to "Login", new_user_session_path, class: 'button' %>
+				  <%= link_to "Sign in", new_user_session_path, class: 'button' %>
 			<% end %>
 		  </p> 
 		</nav>

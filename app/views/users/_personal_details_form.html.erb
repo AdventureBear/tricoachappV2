@@ -1,0 +1,31 @@
+<%= form_for(@user)  do |f| %>
+  <%= render "shared/errors", object: @user %>
+	<fieldset>
+		<ol>
+	<li >	
+		<%= f.label :first_name %><br />
+		<%= f.text_field :first_name,  autofocus: true %>
+
+	</li>
+	<li >
+		<%= f.label :last_name %><br/>
+		<%= f.text_field :last_name %><br/>
+	</li>
+	
+	<li >
+		<%= f.label :birthdate %><br/>
+		<%= f.date_select :birthdate, start_year: 1915 %><br/>
+	</li>
+
+	<li >
+  		<%= f.label :img_file_name %><br/>
+  		<%= f.text_field :img_file_name %>
+	</li>
+	</ol>
+
+	<p>
+		<%= f.submit %> | 
+		<%= link_to "Cancel", users_path, class: 'button' %>
+	</p>
+	</fieldset>
+<% end %>
