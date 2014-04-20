@@ -5,7 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  	def full_name
-     	first_name + " " +  last_name
+	 def full_name
+	  	if first_name.blank?
+	  		"User " + id.to_s 
+	  	else
+	     	first_name + " " +  last_name
+		end
 	end
 end
+
+

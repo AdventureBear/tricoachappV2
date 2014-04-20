@@ -56,3 +56,6 @@ end
 # Use Devise
 gem 'devise'
 
+#Use Cancan
+gem 'cancan'
+

@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
  root "home#index"
+  devise_for :users, :path=> 'u'
 
-  devise_for :users
   resources :races
   resources :home
   resources :dashboard
 
- 
+  resources :users
 
+  #match '/users',   to: 'users#index',   via: 'get'
+  #match '/users/:id',     to: 'users#show',       via: 'get'
+   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
