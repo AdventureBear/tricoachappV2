@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
 	def index
 		@users = User.all
 	end
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update_attributes(user_params)
-			redirect_to user_url, notice: "Updated User."
+			redirect_to users_admin_url, notice: "Updated User."
 		else
 			render :edit
 		end
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-	  		redirect_to user_url, notice: "User succesfully created!" 
+	  		redirect_to users_admin_index_url, notice: "User succesfully created!" 
 		else
 			render :new
 		end

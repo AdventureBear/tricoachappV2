@@ -2,5 +2,51 @@
   <h1>Edit User (All Roles Only)</h1>
 </header>
 
-<%= render 'form' %>
+<%= form_for @user, url: users_admin_path(@user)  do |f| %>   
+<!--#http://guides.rubyonrails.org/routing.html  <Fix was here for form_for correction, specify URL -->
+  <%= render "shared/errors", object: @user %>
+  <fieldset>
+    <ol>
+
+      <li class="required">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, size: 40, autofocus: true %>
+      </li>
+      <li class="required">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, size: 40 %>
+      </li>
+      <li class="required">
+        <%= f.label :email %>
+        <%= f.email_field :email, size: 40 %>
+      </li>
+      <li class="required">
+        <%= f.label :password %>
+        <%= f.password_field :password, size: 40 %>
+      </li>
+      <li class="required">
+        <%= f.label :password_confirmation, "Confirm Password" %>
+        <%= f.password_field :password_confirmation, size: 40 %>
+      </li>
+      <li >
+        <%= f.label :birthdate %><br/>
+        <%= f.date_select :birthdate, start_year: 1915 %><br/>
+      </li>
+
+      <li >
+          <%= f.label :img_file_name %><br/>
+          <%= f.text_field :img_file_name %>
+      </li>
+
+    </ol>
+    <p>
+      <% if @user.new_record? %>
+        <%= f.submit "Create Account" %>
+      <% else %>
+        <%= f.submit "Update Account" %>
+      <% end %>
+      <%= link_to "Cancel", users_admin_index_path, class: 'button' %>
+    </p>
+  </fieldset>
+<% end %>
 <%#= render 'personal_details_form' %>

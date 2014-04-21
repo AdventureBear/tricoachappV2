@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
  root "home#index"
-  devise_for :users, :path=> 'u'
+  devise_for :users  #, :path=> 'u'
 
   resources :races
   resources :home
   resources :dashboard
 
-  resources :users
+  #resources :users
+  resources :users_admin, :controller => 'users'
+    #match 'new' => 'users_admin_index#create', :via => :post
+
 
   #match '/users',   to: 'users#index',   via: 'get'
   #match '/users/:id',     to: 'users#show',       via: 'get'

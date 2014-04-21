@@ -1,4 +1,5 @@
-<%= form_for(@user) do |f| %>
+<%= form_for @user, url: users_admin_index_path(@user)  do |f| %>   
+<!--#http://guides.rubyonrails.org/routing.html  <Fix was here for form_for correction, specify URL -->
   <%= render "shared/errors", object: @user %>
   <fieldset>
     <ol>
@@ -40,7 +41,7 @@
       <% else %>
         <%= f.submit "Update Account" %>
       <% end %>
-      <%= link_to "Cancel", users_path, class: 'button' %>
+      <%= link_to "Cancel", users_admin_index_path, class: 'button' %>
     </p>
   </fieldset>
 <% end %>

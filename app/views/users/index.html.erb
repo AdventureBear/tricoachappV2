@@ -6,7 +6,7 @@
 <% @users = User.all %>
 <ol>
 <% @users.each do |user| %>
- <li> <%= link_to user.full_name, user %><br/>
+ <li> <%= link_to user.full_name, users_admin_path(user) %><br/>
   <%= user.email %></li>
 <% end %>
 </ol>
@@ -14,7 +14,7 @@
 
 <footer>
 	<nav>
-		<%= link_to "Add New User", new_user_path, class: 'button' %> 
+		<%= link_to "Add New User", new_users_admin_path, class: 'button' %> 
 	</nav>
 </footer>
 </article>
