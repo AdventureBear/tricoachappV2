@@ -2,7 +2,10 @@ Rails.application.routes.draw do
  root "home#index"
   devise_for :users  #, :path=> 'u'
 
-  resources :races
+  resources :races do
+    resources :race_registrations
+  end
+
   resources :home
   resources :dashboard
 
