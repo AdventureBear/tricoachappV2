@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe RaceRegistrationsController do
 
+<<<<<<< HEAD
   before do
     @race = Race.create!(race_attributes)
   end
@@ -25,3 +26,6 @@ describe RaceRegistrationsController do
     end
   end
 end
+=======
+end
+>>>>>>> race_registrations
