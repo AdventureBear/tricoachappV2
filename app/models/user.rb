@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :race_registrations, dependent: :destroy
+  has_many :raceregs, through: :race_registrations, source: :race
 
 	 def full_name
 	  	if first_name.blank?

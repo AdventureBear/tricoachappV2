@@ -7,5 +7,7 @@ class Race < ActiveRecord::Base
   		message: "must reference a GIF, JPG, or PNG image"
 		}
 
+	has_many :race_registrations, dependent: :destroy
+	has_many :registrants, through: :race_registrations, source: :user
 
 end

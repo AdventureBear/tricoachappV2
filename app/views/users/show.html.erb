@@ -18,6 +18,17 @@
     <%= format_age(@user) %>
   </p>
 
+  <% if @raceregs.any? %>
+  <h3>Race Registrations</h3>
+  <ul>
+   <% @raceregs.each do |racereg| %>
+     <li>
+       <%= link_to racereg.name, racereg %>
+     </li>
+   <% end %>
+  </ul>
+<% end %>
+
 <!--Implement this with contact info model?
   <h3>Address </h3>
   <p>

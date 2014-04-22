@@ -1,12 +1,16 @@
 module UsersHelper
 
-def image_for(user)
+def image_for(user, options={})
+  size = options[:size] || 80
   if user.img_file_name.blank?
-    image_tag('placeholder.png')
+    image_tag('placeholder.png', width: size  )
   else
-    image_tag(user.img_file_name)
+    image_tag(user.img_file_name, width: size)
   end
 end
+
+  
+
 
 def format_age(user)
 	if user.birthdate?

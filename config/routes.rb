@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :race_registrations
+
  root "home#index"
   devise_for :users  #, :path=> 'u'
 
